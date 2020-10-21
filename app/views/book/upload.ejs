@@ -1,0 +1,46 @@
+<%- layout("layouts/main") %>
+
+<div class="row">
+	<div class="col-lg-6 offset-lg-3">
+		<div class="card">
+			<div class="card-body">
+				<h4 class="font-weight-normal">Upload a Book</h4>
+				<form method="POST" action="/book/upload?_csrf=<%= csrfToken %>" enctype="multipart/form-data">
+				  <%- include("../partials/messages") %>
+				  <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+				  <div class="form-group">
+				    <label for="title">Book Title</label>
+				    <input type="text" class="form-control" id="title" name="title" />
+				  </div>
+				  <div class="form-group">
+				    <label for="description">Description</label>
+				    <textarea type="text" class="form-control" id="description" name="description"></textarea>
+				  </div>
+				  <div class="form-group">
+				    <label for="author">Author</label>
+				    <input type="text" class="form-control" id="author" name="author" />
+				  </div>
+			     <div class="form-group">
+				  <label for="book">Select Book</label>
+				  <div class="input-group mb-3">
+				    <div class="custom-file">
+				      <input type="file" class="custom-file-input" id="book" name="book">
+				      <label class="custom-file-label" for="book">Choose file</label>
+				    </div>
+				  </div>
+				 </div>
+				 <div class="form-group">
+				  <label for="cover">Book Cover Image</label>
+				  <div class="input-group mb-3">
+				    <div class="custom-file">
+				      <input type="file" class="custom-file-input" id="cover" name="cover">
+				      <label class="custom-file-label" for="cover">Choose file</label>
+				    </div>
+				  </div>
+				 </div>
+				  <button type="submit" class="btn btn-primary">Upload</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

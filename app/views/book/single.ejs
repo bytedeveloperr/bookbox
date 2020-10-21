@@ -1,0 +1,40 @@
+<%- layout("layouts/main") %>
+
+<div class="row">
+	<div class="col-lg-6 offset-md-3">
+		<div class="card">
+			<div class="card-body">
+				<h3 class="font-weight-normal mb-3"><%- book.title %></h3>
+				<img src="/upload/images/<%- book.coverUrl %>" width="100%" height="500px">
+				<h5 class="font-weight-bold mt-5">Book Details</h5>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item"><strong>Author:</strong> <%- book.author %></li>
+					<li class="list-group-item"><strong>Description:</strong> <%- book.description %></li>
+					<li class="list-group-item"><strong>Number of pages:</strong> <%- book.pages %></li>
+					<li class="list-group-item"><strong>Size:</strong> <%- book.bookSize %>MB</li>
+					<li class="list-group-item"><strong>Downloads:</strong> <%- book.downloads %></li>
+					<li class="list-group-item"><strong>Reads:</strong> <%- book.reads %></li>
+					<li class="list-group-item"><strong>Uploader:</strong> <a href="/user/<%- book.uploader._id %>"><%- book.uploader.fullName %></a></li>
+				</ul>
+
+				<h4 class="font-weight-bold mt-4 mb-2">Comments</h4>
+					<form class="" method="POST">
+						<textarea name="text" class="form-control"></textarea>
+						<button type="submit" class="btn btn-primary mt-2">Comment</button>
+					</form>        
+					<% if(book.comments.length > 0) { %>
+					<% book.comments.forEach( comment => {%>
+					<hr />
+					<div class="mt-3">
+						<h5><a href="" class="text-dark font-weight-bold">Adetunji Olawale</a> - <small>3 days ago</small></h5>
+						<p>I've been looking for this PDF for long, thanks -:)</p>
+					</div>
+					<%})%>
+					<%} else { %>
+						<p class="font-weight-bold text-muted text-center mt-3">No comment yet.</p>
+					<%}%>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

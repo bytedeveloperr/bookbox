@@ -1,0 +1,73 @@
+<%- layout("layouts/main") %>
+
+<div class="row">
+	<div class="col-12">
+		<div class="card">
+			<div class="card-body">
+				<div class="row">
+					<div class="col-lg-6 mb-3">
+						<figure>
+							<img src="/public/img/avatar.png" alt="" width="150px" height="150px" class="d-block mx-auto">
+						</figure>
+						<h4 class="text-center font-weight-bold">Abdulrahman Yusuf</h4>
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item"><i class="fa fa-envelope"></i> Email: abdulrahmanyusuf@gmail.com</li>
+							<li class="list-group-item"><i class="fa fa-link"></i> Website: <a href="">abdulrahmanyusuf.me</a></li>
+							<li class="list-group-item"><i class="fa fa-book"></i> Total Uploaded Books: 15</li>
+						</ul>
+					</div>
+					<div class="col-lg-6">
+						<h4 class="font-weight-normal">Update Account</h4>
+						<form method="POST" action="/register">
+						  <%# partials("partials/messages"); %>
+						  <div class="form-group">
+						    <label for="fullName">Full Name</label>
+						    <input type="text" class="form-control" id="fullName" name="fullName" value="Abdulrahman Yusuf" />
+						  </div>
+						  <div class="form-group">
+						    <label for="email">Email Address</label>
+						    <input type="email" class="form-control" id="email" name="email" value="abdulrahmanyusuf@gmail.com" />
+						  </div>
+						  <div class="form-group">
+						    <label for="website">Website</label>
+						    <input type="website" class="form-control" id="website" name="website" value="abdulrahmanyusuf.me" />
+						  </div>
+						  <button type="submit" class="btn btn-primary">Update</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<br />
+<div class="row">
+	<div class="col-lg-6">
+		<h4 class="font-weight-normal">Your Libraries</h4>
+		<% var c = [0,1,2,3,4,5,6,7,8,9]; c.forEach(d=>{%>
+		<div class="card mb-2">
+			<div class="card-body">
+				<h4>Ut enim ad minim veniam</h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</p>
+			    <a href="" class="card-link">view library &rarr;</a>
+			</div>
+		</div>
+		<%})%>
+	</div>
+	<div class="col-lg-6">
+		<h4 class="font-weight-normal">Your Books</h4>
+		<% var c = [0,1,2,3,4,5,6,7,8,9]; c.forEach(d=>{%>
+		<div class="card mb-2">
+			<!-- <div class="card-body"> -->
+				<div class="media">
+				  <img src="https://eloquentjavascript.net/img/cover.jpg" class="mr-3" alt="" width="70px" height="100px">
+				  <div class="media-body">
+				    <h5 class="mt-2"><a href="" class="text-dark font-weight-bolder">Cras sit amet nibh libero, in gravida nulla.</a></h5>
+				    <p class="mt-2"><a href="" class="text-dark"><i class="fa fa-download"></i> Download</a> &nbsp;&nbsp;&nbsp; <a href="" class="text-dark"><i class="fa fa-bookmark"></i> Bookmark</a> &nbsp;&nbsp;&nbsp; <a href="" class="text-dark"><i class="fa fa-flag"></i> Report</a></p>
+				  </div>
+				</div>
+			<!-- </div> -->
+		</div>
+		<%})%>
+	</div>
+</div>

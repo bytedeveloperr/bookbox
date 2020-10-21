@@ -1,0 +1,28 @@
+<%- layout("layouts/other"); %>
+<div class="row">
+	<div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+		<div class="card mt-5">
+			<div class="card-body">
+				<h4 class="mb-3 text-center font-weight-bold">Register for BookBox</h4>
+				<form method="POST" action="/register">
+				  <%- include("partials/messages"); %>
+				  <input type="hidden" name="_csrf" value="<%= csrfToken %>"/>
+				  <div class="form-group">
+				    <label for="fullName">Full Name</label>
+				    <input type="text" class="form-control" id="fullName" name="fullName" />
+				  </div>
+				  <div class="form-group">
+				    <label for="email">Email Address</label>
+				    <input type="email" class="form-control" id="email" name="email" />
+				  </div>
+				  <div class="form-group">
+				    <label for="password">Password</label>
+				    <input type="password" class="form-control" id="password" name="password" />
+				  </div>
+				  <button type="submit" class="btn btn-primary">Register</button>
+				  <p class="mt-2">Already registered? <a href="/login">Login</a></p>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

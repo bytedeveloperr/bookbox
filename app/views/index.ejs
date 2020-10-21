@@ -1,0 +1,24 @@
+<%- layout("layouts/main") %>
+<%- include("partials/messages"); %>
+<div class="row">
+	<div class="col-lg-6">
+		<h4 class="font-weight-normal">Latest Books</h4>
+		<% books.forEach(book => {%>
+		<div class="card mb-2">
+			<!-- <div class="card-body"> -->
+				<div class="media">
+				  <img src="/upload/images/<%- book.coverUrl %>" class="mr-3" alt="" width="70px" height="100px">
+				  <div class="media-body">
+				    <h5 class="mt-2"><a href="/book/<%- book._id %>" class="text-dark font-weight-bolder"><%- book.title %></a></h5>
+				    <p class="mt-5"><a href="" class="text-dark"><i class="fa fa-download"></i> Download</a> &nbsp;&nbsp;&nbsp; <a href="" class="text-dark"><i class="fa fa-bookmark"></i> Bookmark</a> &nbsp;&nbsp;&nbsp; <a href="" class="text-dark"><i class="fa fa-flag"></i> Report</a></p>
+				  </div>
+				</div>
+			<!-- </div> -->
+		</div>
+		<%})%>
+	</div>
+	<div class="col-lg-6">
+		<h4>Your Libraries</h4>
+		<p class="text-muted text-center font-weight-bolder">You have no Library</p>
+	</div>
+</div>
